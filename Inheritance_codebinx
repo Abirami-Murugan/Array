@@ -1,0 +1,296 @@
+Inheritance.
+
+Pre- requisites:
+
+1)What is method,
+2)What is class,
+3)What is object,
+4)How can we call the method using object.
+
+What is Inheritance?
+1)One object of class acquires all the properties and behaviours  of a parent class object.
+2)Is-A Relationship.
+
+Advantages:
+
+1)Code reusability.
+2)Method Over-riding.
+
+Code Reusability:
+It, means we have many apps in our company. Most of the apps have sign up forms. so, They create that sign up forms in one seperate class. Then, they are reuse that code. 
+
+Whenever, that apps sign up will work that time this seperate signup code will also run.
+
+Types Of Inheritance:
+
+1)Single Inheritance
+2)Multi level Inheritance
+3)Multiple Inheritance
+4)hierarchical Inheritance.
+
+Single Inheritance:
+
+Class A ---> Class B
+
+Example:
+
+Ration Card
+
+Class A
+Our, Grand Father and Grand Ma Name will come. 
+
+Class B
+Our, Father got married his Ration Card has His name , then our mum name and our name. 
+
+but our father thought and like his father and mother name need to come his ration card.
+
+So, 
+
+Istead of he add Grand father and Grand Ma name in his card. He make a link for Class A to Class B.
+
+This, Link is called Inheritance.
+
+The Parent class is called Super Class.
+The inherited class is called Sub class.
+
+
+1)Grand_Father_Family.java
+package youtube;
+
+public class Grand_Father_Family {
+	
+	String GrandFatherName = "MuthuSamy";
+	String GrandMotherName = "Alwar";
+	
+	
+	public void display_Gf_family() {
+		System.out.println("Family Members:");
+		System.out.println("Grand Father:"+GrandFatherName);
+		System.out.println("Grand Mother:"+GrandMotherName);
+	}
+
+}
+
+2)Father_Family.java
+
+package youtube;
+
+public class Father_Family extends Grand_Father_Family{
+	
+	String Father_Name = "Murugan";
+	String Mother_Name = "Muthu Lakshmi";
+	
+	public void Father_Family()
+	{
+		System.out.println("Father Family:");
+		System.out.println("Father Name:"+Father_Name);
+		System.out.println("Mother Name:"+Mother_Name);
+	}
+	
+	
+
+}
+
+3)Runner.java
+
+package youtube;
+
+public class Runner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Father_Family object = new Father_Family();
+		
+		
+		 object.Father_Family();
+		 object.display_Gf_family();
+	}
+
+}
+
+
+MultiLevel Inheritance:
+
+Pattern:
+Class A --> Class B --> Class C
+
+Now the child got married,
+
+So, the child have seperate Ration Card. Child like his Ration Card need to have his Father and Grand Father name too.
+
+So
+
+1)Grand_Father_Family.java
+package youtube;
+
+public class Grand_Father_Family {
+	
+	String GrandFatherName = "MuthuSamy";
+	String GrandMotherName = "Alwar";
+	
+	
+	public void display_Gf_family() {
+		System.out.println("Family Members:");
+		System.out.println("Grand Father:"+GrandFatherName);
+		System.out.println("Grand Mother:"+GrandMotherName);
+	}
+
+}
+
+2)Father_Family.java
+package youtube;
+
+public class Father_Family extends Grand_Father_Family{
+	
+	String Father_Name = "Murugan";
+	String Mother_Name = "Muthu Lakshmi";
+	
+	public void Father_Family()
+	{
+		System.out.println("Father Family:");
+		System.out.println("Father Name:"+Father_Name);
+		System.out.println("Mother Name:"+Mother_Name);
+	}
+	
+	
+
+}
+3)Son_Family.java
+package youtube;
+
+public class Son_Family extends Father_Family{
+	String Son_Name = "Hari";
+	String daughter_in_law_Name = "Prema";
+	
+	public void display_Son_Family()
+	{
+		System.out.println("Son Family:");
+		System.out.println("Son Name:"+Son_Name);
+		System.out.println("Daughter In law Name:"+daughter_in_law_Name);
+	}
+
+}
+
+4)Runner.java
+package youtube;
+
+public class Runner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Son_Family object = new Son_Family();
+		
+		
+		 object.display_Son_Family();
+		
+		 object.Father_Family();
+		 object.display_Gf_family();
+	}
+
+}
+
+
+
+3)Hierarchical Inheritance
+
+              Class A
+                /\
+               /  \
+              /    \
+        Class B     Class C
+
+
+Our Grand Father has two Children your father and Father's brother. both are like to add parents name in ration card.
+
+
+We can able to access the Class A methods using both Class B and Class C objects.
+
+
+Example Code:
+
+1)Grand_Father_Family.java
+package youtube;
+
+public class Grand_Father_Family {
+	
+	String GrandFatherName = "MuthuSamy";
+	String GrandMotherName = "Alwar";
+	
+	
+	public void display_Gf_family() {
+		System.out.println("Family Members:");
+		System.out.println("Grand Father:"+GrandFatherName);
+		System.out.println("Grand Mother:"+GrandMotherName);
+	}
+
+}
+
+2)Father_Family.java
+package youtube;
+
+public class Father_Family extends Grand_Father_Family{
+	
+	String Father_Name = "Murugan";
+	String Mother_Name = "Muthu Lakshmi";
+	
+	public void Father_Family()
+	{
+		System.out.println("Father Family:");
+		System.out.println("Father Name:"+Father_Name);
+		System.out.println("Mother Name:"+Mother_Name);
+	}
+	
+}
+
+
+3)Father2_Family.java
+package youtube;
+
+public class Father2_Family extends Grand_Father_Family {
+	String Father2_Name = "Alagar";
+	String Father2_wife = "Padma";
+	
+	public void display_Father2_Family()
+	{
+		System.out.println("Father2 Family:");
+		System.out.println("Father2 Name"+ Father2_Name);
+		System.out.println("Father2 Wife"+ Father2_wife);
+	}
+
+}
+
+4)Runner.java
+package youtube;
+
+public class Runner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	Father_Family  object = new Father_Family ();
+		 object.Father_Family();
+		 object.display_Gf_family();
+		 
+		 
+	Father2_Family object1 = new Father2_Family();
+		 object1.display_Father2_Family();
+		 object1.display_Gf_family();
+		 
+	}
+	
+}
+
+
+4)Multiple Inheritance:
+
+Multiple inheritance is not work in java.
+
+
+Interview Questions:
+Why Multiple Inheritance is not support in Java?
+
+1) The compiler will confuse which class can inherit.
+2)The diamond problem will occur.
+3)We can achieve Multiple Inheritance using interface concept in Java.
