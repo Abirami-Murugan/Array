@@ -1,0 +1,331 @@
+super key word is similar to this key word.
+
+this key word is discuss about current class.
+We can able to access current class method, constructor only.
+
+super key word is discuss about immediate parent class.
+-It's use the inheritance concept.
+-So, we can able to access the immediate parent class(or another class) method or Constructor able to access. 
+
+Difference between this() and this keyword:
+this() --> This key word is use to invoke the current class Constructor.
+
+this() it's reference variable for Constructor.
+
+this --> is discuss about object.
+
+
+Super Key word:
+
+It's a reference variable. It used to refer immediate parent class object.
+
+Real Usage:
+
+1)It is use to refer immediate parent class instance variable.
+2)To invoke immediate parent class method.
+3)To invoke immediate parent class Constructor.
+
+1)It is use to refer immediate parent class instance variable.
+
+i)Runnerr.java
+
+package youtube;
+
+public class Runnerr {
+
+	public static void main(String[] args) {
+			
+
+ClassA object = new ClassA();
+object.Employee();
+
+	}
+
+}
+
+ii)ClassA.java
+package youtube;
+
+public class ClassA extends ClassB {
+	
+	String Name = "Murugan";
+	
+	public void Employee()
+	{
+		System.out.println("Employee Name:"+Name);
+		System.out.println("Employee Name:"+Name);
+	}
+	
+}
+
+iii)ClassB.java
+package youtube;
+
+public class ClassB {
+	String Name = "Abirami";
+
+}
+
+Output:
+Employee Name:Murugan
+Employee Name:Murugan
+
+With super keyword
+
+i)ClassA.java
+package youtube;
+
+public class ClassA extends ClassB {
+	
+	String Name = "Murugan";
+	
+	public void Employee()
+	{
+		System.out.println("Employee Name:"+Name);
+		System.out.println("Employee Name:"+super.Name);
+	}
+	
+}
+
+ii)ClassB.java
+
+package youtube;
+
+public class ClassB {
+
+String Name = "Abirami";
+
+}
+
+iii)Runnerr.java
+package youtube;
+
+public class Runnerr {
+
+public static void main(String[] args) {
+			
+
+ClassA object = new ClassA();
+object.Employee();
+
+	}
+
+}
+
+Output:
+Employee Name:Murugan
+Employee Name:Abirami
+
+
+2)To invoke immediate parent class method.
+
+Without super key word:
+
+i)ClassA.java
+package youtube;
+
+public class ClassA extends ClassB {
+	
+	String Name = "Murugan";
+	
+	public void Employee()
+	{
+		System.out.println("Employee Name:"+Name);
+		
+		
+	}
+	
+}
+
+ii)ClassB.java
+package youtube;
+
+public class ClassB {
+	String Name = "Abirami";
+
+	public void Employee()
+	{
+		System.out.println("Employee Name:"+Name);
+	}
+}
+
+iii)Runnerr.java
+package youtube;
+
+public class Runnerr {
+
+	public static void main(String[] args) {
+			
+System.out.println("Result for Calling the Method.");
+ClassA object = new ClassA();
+object.Employee();
+
+	}
+
+}
+
+Output:
+Result for Calling the Method.
+Employee Name:Murugan
+
+With Super Keyword:
+
+i)ClassA.java
+package youtube;
+
+public class ClassA extends ClassB {
+	
+	String Name = "Murugan";
+	
+	public void Employee()
+	{
+		System.out.println("Employee Name:"+Name);
+		super.Employee();
+			
+	}	
+
+}
+
+ii)ClassB.java
+
+package youtube;
+
+public class ClassB {
+	String Name = "Abirami";
+
+	public void Employee()
+	{
+		System.out.println("Employee Name:"+Name);
+	}
+}
+
+
+iii)Runnerr.java
+package youtube;
+
+public class Runnerr {
+
+	public static void main(String[] args) {
+			
+System.out.println("Result for Calling the Method.");
+ClassA object = new ClassA();
+object.Employee();
+
+	}
+
+}
+
+Output:
+Result for Calling the Method.
+Employee Name:Murugan
+Employee Name:Abirami
+
+Note:
+
+Here, if we needs to call immediate parent class method don't needs to create another one object and calling statement. Simply, use the super keyword to invoke that immediate parent class method. 
+
+
+3)To invoke immediate parent class Constructor.
+
+with and without super() keyword we will get the same output.
+Because, compiler in defaultly, activate the super() keyword.
+In other words, with super() keyword and without super() keyword we will get the same output.
+First, the immediate parent class statement will execute, after that the sub class statement will execute.
+
+
+ 
+i)ClassB.java
+package youtube;
+
+public class ClassB {
+	String Name = "Abirami";
+
+	public ClassB()
+	{
+		System.out.println("Employee Name:"+Name);
+	}
+}
+
+
+ii)ClassA.java
+package youtube;
+
+public class ClassA extends ClassB {
+	
+	String Name = "Murugan";
+	
+	public ClassA()
+	{
+		//super();
+		System.out.println("Employee Name:"+Name);		
+	}	
+}
+
+iii)Runnerr.java
+package youtube;
+
+public class Runnerr {
+
+	public static void main(String[] args) {
+			
+System.out.println("Result for Calling the Method.");
+ClassA object = new ClassA();
+
+	}
+
+}
+
+Output:
+Result for Calling the Method.
+Employee Name:Abirami
+Employee Name:Murugan
+
+
+With Super keyword.
+i)ClassB.java
+package youtube;
+
+public class ClassB {
+	String Name = "Abirami";
+
+	public ClassB()
+	{
+		System.out.println("Employee Name:"+Name);
+	}
+}
+
+
+ii)ClassA.java
+package youtube;
+
+public class ClassA extends ClassB {
+	
+	String Name = "Murugan";
+	
+	public ClassA()
+	{
+		super();
+		System.out.println("Employee Name:"+Name);		
+	}	
+}
+
+iii)Runnerr.java
+package youtube;
+
+public class Runnerr {
+
+	public static void main(String[] args) {
+			
+System.out.println("Result for Calling the Method.");
+ClassA object = new ClassA();
+
+	}
+
+}
+
+Output:
+Result for Calling the Method.
+Employee Name:Abirami
+Employee Name:Murugan
+
+
