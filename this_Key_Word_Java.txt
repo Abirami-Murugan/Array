@@ -1,0 +1,282 @@
+this Key word:
+
+-this key word is a reference variable that refers to the current object.
+
+Real Usage:
+
+1. To refer current class instance variable.
+2. To invoke current class method.
+3. To invoke current class constructor.
+
+1)ClassA.java
+
+package youtube;
+
+public class ClassA  {
+	
+	String Name;//This is current class instance variable
+	String CompanyName;//This too.
+	
+	
+	public void Employee(String Name, String CompanyName){
+		
+		this.Name= Name;
+		this.CompanyName= CompanyName;
+			
+	}
+	
+	public void display()
+	{
+		
+System.out.println("Employee Name:"+ Name);
+System.out.println("Company Name:"+ CompanyName);
+		
+	}
+
+}
+
+
+
+2)Runnerr.java
+package youtube;
+
+public class Runnerr {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		System.out.println("Result of the calling");
+		ClassA object = new ClassA();
+		object.Employee("Abi", "ABC Company");
+		object.display();
+
+	}
+
+}
+
+Output:
+Result of the calling
+Employee Name:Abi
+Company Name:ABC Company
+
+Note:
+
+-this key word make developer job easier.
+-Instance and parameter will be same then we can able to understand easily.
+
+
+In line 21 will be rewritten like below. What will happen?
+
+public void Employee(String N, String C)
+
+We can't understand N and C that's why we write like the above using this keyword. Name and CompanyName will be understandable more than N and C.
+
+So, We can proved this key word refers to current class instance variable.
+
+Unlike, if we write without this key word what will happen.
+
+
+1)ClassA.java
+package youtube;
+
+public class ClassA  {
+	
+	String Name;
+	String CompanyName;
+	
+	
+	public void Employee(String Name, String CompanyName){
+		
+		Name= Name;
+		CompanyName= CompanyName;
+			
+	}
+	
+	public void display()
+	{
+		
+System.out.println("Employee Name:"+ Name);
+System.out.println("Company Name:"+ CompanyName);
+		
+	}
+
+}
+
+2)Runnerr.java
+package youtube;
+
+public class Runnerr {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		System.out.println("Result of the calling");
+		ClassA object = new ClassA();
+		object.Employee("Abi", "ABC Company");
+		object.display();
+
+	}
+
+}
+
+Output://Without this keyword.
+
+Result of the calling
+Employee Name:null
+Company Name:null
+
+The compiler will confuse, because parameters and current class instance variables are same.
+
+
+Proof
+ii)To invoke current class method.
+
+1)ClassA.java
+package youtube;
+
+public class ClassA  {
+	
+	String Name;
+	String CompanyName;
+	
+	
+	public void Employee(String Name, String CompanyName){
+		
+		this.Name= Name;
+		this.CompanyName= CompanyName;
+		this.display();
+			
+	}
+	
+	public void display()
+	{
+		
+System.out.println("Employee Name:"+ Name);
+System.out.println("Company Name:"+ CompanyName);
+		
+	}
+
+}
+
+
+
+2)Runnerr.java
+package youtube;
+
+public class Runnerr {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		System.out.println("Result of the calling");
+		ClassA object = new ClassA();
+		object.Employee("Abi", "ABC Company");
+		
+
+	}
+
+}
+
+iii)To invoke current class Constructor.
+
+this()-->Key word should be the first statement.
+
+1)Runnerr.java
+package youtube;
+
+public class Runnerr {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		System.out.println("Result of the calling");
+ClassA object = new ClassA("Arun","ABC Company");
+		
+		
+
+	}
+
+}
+
+2)ClassA.java
+package youtube;
+
+public class ClassA  {
+	
+	String Name;
+	String CompanyName;
+	
+	public  ClassA() {
+		
+		System.out.println("Say! Hello");
+	}
+	
+	public ClassA(String Name, String CompanyName){
+		
+		this();
+		this.Name= Name;
+		this.CompanyName= CompanyName;
+		System.out.println("Employee Name:"+Name);
+		System.out.println("Company Name:"+Name);
+		
+		
+			
+	}
+	
+}
+
+
+Note:Constructor call must be the first statement in a constructor
+
+1)Runnerr.java
+package youtube;
+
+public class Runnerr {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		System.out.println("Result of the calling");
+ClassA object = new ClassA("Arun","ABC Company");
+		
+		
+
+	}
+
+}
+
+2)ClassA.java
+package youtube;
+
+public class ClassA  {
+	
+	String Name;
+	String CompanyName;
+	
+	public  ClassA() {
+		
+		System.out.println("Say! Hello");
+	}
+	
+	public ClassA(String Name, String CompanyName){
+		
+		
+		this.Name= Name;
+		this.CompanyName= CompanyName;
+		System.out.println("Employee Name:"+Name);
+		System.out.println("Company Name:"+Name);
+        this();//Constructor call must be the first statement in the constructor.
+		
+		
+			
+	}
+	
+}
+
+
+
