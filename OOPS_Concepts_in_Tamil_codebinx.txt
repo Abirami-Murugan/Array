@@ -1,0 +1,100 @@
+OOPS
+It has 4 important concepts.
+1)Inheritance
+2)Polymorphism
+3)Encapsulation
+4)Abstraction.
+
+Inheritance:
+
+It is used for code reusability, purpose.
+
+Example:
+
+Our Grandfather using one watch. And, then our father also using that watch. So, we conclude that watch is reusing here.
+
+In programming, world also they are reusing the code.
+
+For, using Inheritance we are achieving code reusability.
+
+Programming world example:
+
+Programmers A and B are working in a company. 
+
+The Manager ask to Programmer A to create the Zomato App. Then, He created from the scratch and He delivered him project. 
+
+Now, the Manager give task for programmer B to create Swiggy App. but, now the Programmer B never create that Swiggy app from the scratch. Because, both are online food ordering applications. Most of the functionalities are same. So, He will do simple modifications reuse the super class code and create sub- classes to achieve this task.
+
+
+2) Abstraction:
+
+In our old days we're using Mobile without camera. 
+
+-It means we're used mobile and camera seperately. Both, are have different functionalities and different purposes.
+
+But, now a days we're using smart phone that means Mobile with camera.
+
+Here, we implemented the camera inside the mobile phone.
+
+In the same way In programming we are have 2 functions for achieve Abstraction.
+
+i) Abstract Methods
+ii) Interface.
+
+
+3)Encapsulation
+
+Encapsulation is used for security purpose.
+
+For, example The bike manufacturer for security purpose they don't provide some permissions for you as user..
+
+How?
+
+We can able to change,
+
+i) Amount of fuel.
+ii) We cannot change in the type of fuel.
+
+In other words, One day we can have 1 ltr another day 2 ltr some time 3 ltr. Only, we can change.
+
+But, we can't put the Diesel instead of Petrol.
+
+If i put this it will lead to cease the bike.
+
+In the programming world we are achieving this security using,
+
+Packages, Getter and Setter, Access Modifiers too.
+
+4) Polymorphism (Adaptability)
+
+Polymorphism means one thing can have many forms.
+
+
+Example
+Vehicle
+3 properties are there for vehicle.
+i)Wheel
+ii)Break
+iii)Seat
+
+Bike, Car and Cycle has These three properties.
+
+In other words, vehicle has the above 3 properties. but, these three properties are have 3 forms.
+
+Bike is vehicle, Car is also the vehicle and Cycle is also the vehicle.
+
+One thing can have 3 forms.
+
+Polymorphism means many forms.
+
+Here, vehicle has 3 forms.
+
+In coding we are achieving Polymorphism using 2 methods,
+
+1)Method Overloading,
+2)Method Overriding.
+
+
+
+  
+
